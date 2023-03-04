@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio Desktop" version="1.0.8151.26392"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="96">
+    <identity>
+      <id>1793da84-5c8e-4bd2-bc93-b9561c4c4705</id>
+      <revision>21</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <roundingMode>0</roundingMode>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="2" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true">
+      <paper id="9" orientation="Portrait" width="827" height="1169" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Studio Desktop" version="1.0.8151.26392" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.11.8151.26392" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.11.8151.26392" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="0" top="0" width="734" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">------------------------------------------------------------------------------------------</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="18" width="92" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">RC</e>
+          <e type="operand">фильтр</e>
+          <e type="operator" args="2">-</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="45" width="96" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Rf</e>
+          <e type="operand">10</e>
+          <e type="operand">10</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="153" top="45" width="197" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Cf</e>
+          <e type="operand">47</e>
+          <e type="operand">10</e>
+          <e type="operand">9</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.7</e>
+          <e type="operand">10</e>
+          <e type="operand">8</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="108" top="54" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Ом</e>
+        </input>
+      </math>
+    </region>
+    <region left="369" top="54" width="20" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Ф</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="81" width="166" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Постоянная времени:</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="99" width="165" height="33" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">τ</e>
+          <e type="operand">Rf</e>
+          <e type="operand">Cf</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">10</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.47</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="108" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="144" width="118" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Время 10%-90%</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="171" width="169" height="30" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">T.10.90</e>
+          <e type="operand">2.2</e>
+          <e type="operand">τ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.034</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="171" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="207" width="86" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Время 99%</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="225" width="150" height="30" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">T.99</e>
+          <e type="operand">4.7</e>
+          <e type="operand">τ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.209</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="225" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="252" width="734" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">------------------------------------------------------------------------------------------</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="270" width="96" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Rf</e>
+          <e type="operand">20</e>
+          <e type="operand">10</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="153" top="270" width="197" height="33" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Cf</e>
+          <e type="operand">47</e>
+          <e type="operand">10</e>
+          <e type="operand">9</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.7</e>
+          <e type="operand">10</e>
+          <e type="operand">8</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="108" top="279" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Ом</e>
+        </input>
+      </math>
+    </region>
+    <region left="369" top="279" width="20" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Ф</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="306" width="166" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Постоянная времени:</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="324" width="165" height="33" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">τ</e>
+          <e type="operand">Rf</e>
+          <e type="operand">Cf</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">10</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.94</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="333" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="369" width="118" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Время 10%-90%</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="396" width="169" height="30" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">T.10.90</e>
+          <e type="operand">2.2</e>
+          <e type="operand">τ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.068</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="396" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="432" width="86" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Время 99%</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="450" width="150" height="30" color="#000000" fontSize="10">
+      <math decimalPlaces="3">
+        <input>
+          <e type="operand">T.99</e>
+          <e type="operand">4.7</e>
+          <e type="operand">τ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.418</e>
+        </result>
+      </math>
+    </region>
+    <region left="180" top="450" width="28" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">мс</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="477" width="734" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">------------------------------------------------------------------------------------------</p>
+        </content>
+      </text>
+    </region>
+  </regions>
+</worksheet>
