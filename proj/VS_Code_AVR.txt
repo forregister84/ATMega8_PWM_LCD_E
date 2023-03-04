@@ -1,0 +1,101 @@
+VS Code with the AVR
+
+  неполная статья:
+https://izzudinhafizprojects.wordpress.com/2021/04/05/setting-up-visual-studio-code-vscode-for-avr-programming-not-arduino/
+  лучше:
+https://www.tonymitchell.ca/posts/use-vscode-with-avr-toolchain/
+includePath: No need to specify the AVR include paths as they will be included automatically.
+
+	Makefile:
+  Пример  простого makefile для микроконтроллеров avr atmega.
+https://gist.github.com/stlehmann/e1931223dc18f1d575c4
+https://github.com/richu101/VScode-AVR-programmer
+http://mainloop.ru/avr-atmega/makefile-avr-gcc.html
+https://github.com/GriDevE/Makefile-AVR-GCC
+
+https://code.visualstudio.com/docs/cpp/configure-intellisense-crosscompilation
+https://code.visualstudio.com/docs/editor/tasks
+https://www.allisonthackston.com/articles/vscode-tasks-problemmatcher.html
+
+//------------------------------------------------------------------------------
+1.Установить VS Code
+2.Установить расширение C/C++ for Visual Studio Code
+https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+3.Скачать AVR 8-Bit Toolchain (Windows)
+https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers
+Распаковать avr8-gnu-toolchain-3.7.0.1796-win32.any.x86_64.zip 
+4.Установить make.exe http://gnuwin32.sourceforge.net/packages/make.htm
+5.Установить переменную окружения PATH 
+(для make из gnuwin32 не нужно, для MinGW или Cygwin нужно)
+
+Мой Компьютер -> Свойства -> Дополнительные параметры системы -> Переменные среды ->
+Системные переменные -> Path -> Изменить -> Создать
+
+Редактирование переменных среды Windows 11/10
+https://remontka.pro/environment-variables-windows/
+
+
+Проверка в cmd:
+avr-gcc --version
+make --version
+
+# Проверка в cmd GNU CoreUtils
+ls -la
+
+Some Makefile files (like ls, rm, mv, mkdir, etc. – those we are going to use later) 
+might need other GNU tools that are part of the GNU CoreUtils.
+//------------------------------------------------------------------------------
+На основе 
+https://www.tonymitchell.ca/posts/use-vscode-with-avr-toolchain/
+https://tinusaur.com/guides/avr-gcc-toolchain/
+https://gist.github.com/stlehmann/e1931223dc18f1d575c4
+https://github.com/GriDevE/Makefile-AVR-GCC
+https://github.com/richu101/VScode-AVR-programmer
+
+1. В папку нового проекта скопировать папку .vscode и файл Makefile
+2. Добавить свои *.c, *.h файлы
+3. В файле \.vscode\c_cpp_properties.json поменять путь к компилятору. Например:
+"d:\\AVR\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe"
+   Удобнее нажать шестеренку внизу -> Command Palette (Ctrl+Shift+P)
+найти: C/C++: Edit Configurations 
+4. В файле Makefile поменять TARGET, MCU, F_CPU:
+TARGET = ATMega8_PWM_LCD
+MCU = atmega8a
+F_CPU = 1000000
+5. В файле Makefile добавить .c файлы после main.c через \
+SRCS = main.c \
+	lcd_lib_uni1.c
+
+Название контроллера брать из ...\avr8-gnu-toolchain\avr\include\avr\io.h
+__AVR_ATmega168P__ -> atmega168p
+
+//------------------------------------------------------------------------------
+	Компиляция (сборка) и очистка:
+
+Меню VS Code:
+Terminal > Run Build Task > AVR Build
+Terminal > Run Build Task > AVR Clean
+
+//------------------------------------------------------------------------------
+	Пути:
+d:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe
+d:\Program Files (x86)\Atmel\Studio\7.0\shellutils\make.exe
+
+   Подстановка в Makeconf. Названия контроллеров : MCU_1 = atmega168p
+d:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h
+
+//------------------------------------------------------------------------------
+https://gist.github.com/stlehmann/e1931223dc18f1d575c4
+# Compiler flags to generate dependency files.
+GENDEPFLAGS = -MMD -MP -MF .dep/$(@F).d
+
+//------------------------------------------------------------------------------
+The clangd extension can't find includes vscode.htm
+https://www.reddit.com/r/vscode/comments/fj76af/the_clangd_extension_cant_find_includes/
+
+Clangd doesn't use c_cpp_properties.json (though maybe we should), so we really are reliant on compile_commands.json.
+//------------------------------------------------------------------------------
+Atmel Studio 7
+GNU Make 4.1
+
+Built for Windows32
